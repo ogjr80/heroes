@@ -77,7 +77,7 @@ export class AppComponent implements OnInit{
         this.getHeroes(); 
     }
     getHeroes(){
-        this.heroService.getHeroesSlowly().then(heroes => this.heroes=heroes);     
+        this.heroService.getHeroes().then(heroes => this.heroes=heroes);     
         }
     title = 'Heroes Tour Details'; 
     public heroes: Hero[];
