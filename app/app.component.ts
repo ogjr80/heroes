@@ -3,15 +3,20 @@ import {HeroesComponent} from './heroes.component';
 import {HeroService} from './hero.service'; 
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import {DashboardComponent} from './dashboard.component';
-
+import {HeroDetailComponent} from './hero-detail.component';
 @Component({
     selector: 'my-app', 
     template: `
         <h2>{{title}}</h2>
-        <a [routerLink] = "['Heroes']">Heroes</a>
-        <a [routerLink] = "['Dashboard']">Dashboard</a>
+        <ul> 
+            <li><a [routerLink] = "['Heroes']">Heroes</a></li> 
+            <li><a [routerLink] = "['Dashboard']">Dashboard</a></li>
+        </ul> 
+        
+        
         <router-outlet></router-outlet>
     `, 
+    styleUrls: ['app/app.component.css'],
     directives: [ 
         ROUTER_DIRECTIVES
         ],
@@ -32,6 +37,11 @@ import {DashboardComponent} from './dashboard.component';
         path: '/heroes', 
         name: 'Heroes', 
         component: HeroesComponent
+    },
+    {
+        path: '/detail/:id',
+        name: 'HeroDetail',
+        component: HeroDetailComponent
     }
 ])
 export class AppComponent{
