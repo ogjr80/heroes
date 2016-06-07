@@ -8,10 +8,10 @@ import {HeroDetailComponent} from './hero-detail.component';
     selector: 'my-app', 
     template: `
         <h2>{{title}}</h2>
-        <ul> 
-            <li><a [routerLink] = "['Heroes']">Heroes</a></li> 
-            <li><a [routerLink] = "['Dashboard']">Dashboard</a></li>
-        </ul> 
+        <nav> 
+            <a [routerLink] = "['Heroes']">Heroes</a>
+            <a [routerLink] = "['Dashboard']">Dashboard</a>
+        </nav> 
         
         
         <router-outlet></router-outlet>
